@@ -34,7 +34,11 @@ const Dashboard = () => {
     //fetch the products
     const fetchProducts= async ()=>{
         try{
-            const res= await axios.get("http://localhost:5000/api/products");
+            const res= await axios.get("http://localhost:5000/api/products",{
+              headers:{
+                Authorization: `Bearer ${token}`
+              }
+            });
         setProducts(res.data.products || [])
         }
         catch(err){
@@ -114,7 +118,7 @@ const Dashboard = () => {
             <td>{product.price}</td>
             <td>{product.category}</td>
             <td>{product.description}</td>
-            <td>{product.createAt}</td>
+            <td>{new Date(product.createdAt).toLocaleDateString()}</td>
             <td className="actions-btn">
 
              {/* EDIT */}

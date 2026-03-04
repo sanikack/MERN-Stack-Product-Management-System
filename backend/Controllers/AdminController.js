@@ -37,7 +37,7 @@ const CreateProduct= async (req,res)=>{
 
 const GetallProducts= async(req,res)=>{
     try{
-        const products= await ProductSchema.find();
+        const products= await ProductSchema.find().sort({createdAt: -1});
 
         res.status(200).json({
             success: true,

@@ -29,7 +29,11 @@ const EditProduct = () => {
   const fetchProduct = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/products/${id}`
+        `http://localhost:5000/api/products/${id}`,{
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
       );
 
       const product = res.data.product;

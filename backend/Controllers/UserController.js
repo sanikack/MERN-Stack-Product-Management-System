@@ -1,6 +1,7 @@
 const UserSchema= require("../Models/UserSchema");
 const bcrypt= require("bcryptjs");
 const jwt= require("jsonwebtoken");
+const ProductSchema = require("../Models/ProductSchema");
 
 
 const UserRegister= async (req,res)=>{
@@ -117,4 +118,21 @@ const UserLogin= async (req,res)=>{
 }
 
 
-module.exports= {UserRegister, UserLogin}
+const Getallproduct= async (req,res)=>{
+    try{
+        const products= await ProductSchema.find();
+
+        res.status(200).json({
+            success: true,
+            products
+        })
+    }
+    catch(err){
+        res.status(500).json({
+            success: false,
+            message: "Server error"
+        })
+    }
+}
+
+module.exports= {UserRegister, UserLogin, Getallproduct}

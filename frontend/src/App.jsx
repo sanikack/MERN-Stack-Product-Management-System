@@ -15,9 +15,7 @@ function App() {
       <Route path="/" element={ <Login/>}/>
       <Route path="/register" element={ <Register/>}/>
       <Route path="/productlist" element={
-        <ProtectRoute>
           <Productlist/>
-        </ProtectRoute>
        }/>
 
 
