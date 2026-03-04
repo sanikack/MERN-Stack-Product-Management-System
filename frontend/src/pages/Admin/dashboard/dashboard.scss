@@ -1,0 +1,81 @@
+.admin-dashboard {
+  padding: 40px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+
+  h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+  }
+
+  .AddButton {
+    background: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
+
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #34495e;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #eaf2f8;
+    }
+
+    .actions-btn {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .edit-btn
+    .delete-btn {
+      border: none;
+      padding: 6px 8px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .edit-btn {
+      background: none;
+      color: #3498db;
+    }
+
+    .delete-btn {
+      background: none;
+      color: red;
+      
+    }
+  }
+}
