@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./ProductList.scss";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -8,12 +9,19 @@ const ProductList = () => {
   // Fetch Products
   const fetchProducts = async () => {
     try {
+      const token= localStorage.getItem("token");
+
       const res = await axios.get(
-        "http://localhost:5000/api/user/productlist"
+        "http://localhost:5000/api/user/productlist",{
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
       );
 
       setProducts(res.data.products || []);
-    } catch (err) {
+    } 
+    catch (err) {
       console.log(err);
     }
   };

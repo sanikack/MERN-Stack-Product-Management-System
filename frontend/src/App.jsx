@@ -15,8 +15,11 @@ function App() {
       <Route path="/" element={ <Login/>}/>
       <Route path="/register" element={ <Register/>}/>
       <Route path="/productlist" element={
-          <Productlist/>
-       }/>
+        <ProtectRoute>
+<Productlist/>
+        </ProtectRoute>
+        
+     }/>
 
 
       {/* ADMIN SIDE */}

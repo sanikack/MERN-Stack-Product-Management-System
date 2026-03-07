@@ -142,16 +142,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-
-
-
-
-
-
-// const Dashboard= ()=>{
-//     return(
-//         <h1>hello admin</h1>
-//     )
-// }
-
-// export default Dashboard;
